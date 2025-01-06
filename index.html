@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="ada logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="color.css">
+  <link rel="stylesheet" href="Style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link
       rel="stylesheet"
@@ -11,20 +13,37 @@
       integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-  <link rel="stylesheet" href="Style.css">
-  <link rel="stylesheet" href="color.css">
-
+  />
   <title>ADA Admissions</title>
 </head>
-<body class="bg-white text-gray-800 overflow-x-hidden overflow-y-auto">
+<body class="bg-white text-gray-800 overflow-x-hidden">
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-blue-900 z-[1001] hidden flex-col justify-start pt-16 px-6 " it="mobile-menu">
+    <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+    <ul class="space-y-4 text-white text-lg">
+      <li><a href="#" class="block py-2">Library</a></li>
+      <li><a href="#" class="block py-2">Centers and Institutes</a></li>
+      <li><a href="#" class="block py-2">News & Events</a></li>
+      <li><a href="#" class="block py-2">ADA Foundation</a></li>
+      <li><a href="#" class="block py-2">Career@ADA</a></li>
+      <li><a href="#" class="block py-2">MyADA</a></li>
+      <li class="border-t border-blue-800 pt-4">
+        <a href="#" class="block py-2">About</a>
+      </li>
+      <li><a href="#" class="block py-2">Admissions</a></li>
+      <li><a href="#" class="block py-2">Academics</a></li>
+      <li><a href="#" class="block py-2">Schools</a></li>
+      <li><a href="#" class="block py-2">ADA Experience</a></li>
+      <li><a href="#" class="block py-2">ADA School</a></li>
+    </ul>
+  </div>
 
   <!-- Navbar -->
   <nav class="w-full bg-blue-900 text-white fixed top-0 z-[1000]" id="navbar">
     <!-- Top Bar -->
     <div class="flex justify-between items-center px-4 md:px-8 h-12">
       <!-- Left Menu -->
-      <ul class="hidden md:flex space-x-6 font-medium">
+      <ul class="hidden lg:flex space-x-6 font-medium">
         <li><a href="#" class="hover:text-gray-300">Library</a></li>
         <li><a href="#" class="hover:text-gray-300">Centers and Institutes</a></li>
         <li><a href="#" class="hover:text-gray-300">News & Events</a></li>
@@ -34,25 +53,21 @@
       </ul>
 
       <!-- Apply Now Button -->
-      <div>
-        <button class="bg-white px-4 py-1 rounded hover:bg-blue-500 font-bold text-black" >
-          Apply Now
-        </button>
-      </div>
+      <button class="bg-white px-4 py-1 rounded hover:bg-blue-500 font-bold text-black">
+        Apply Now
+      </button>
 
       <!-- Mobile Menu Toggle -->
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-3xl">&#9776;</button>
-      </div>
+      <button id="menu-toggle" class="lg:hidden text-3xl">&#9776;</button>
     </div>
 
     <!-- Bottom Bar -->
     <div class="bg-white text-gray-900 border-t border-gray-300 py-2">
       <div class="flex justify-between items-center px-4 md:px-8">
-        <!-- Logo -->
+        <!-- Logo and Navigation -->
         <div class="flex items-center space-x-4">
-          <img  class=" h-16"src="ada logo.svg" alt="ADA Logo" class="h-8">
-          <ul class="hidden md:flex space-x-4 font-medium">
+          <img src="ada logo.svg" alt="ADA Logo" class="h-12 md:h-16">
+          <ul class="hidden lg:flex space-x-4 font-medium">
             <li><a href="#" class="hover:text-blue-700">About</a></li>
             <li><a href="#" class="hover:text-blue-700">Admissions</a></li>
             <li><a href="#" class="hover:text-blue-700">Academics</a></li>
@@ -62,7 +77,7 @@
           </ul>
         </div>
 
-      
+        <!-- Search and Language -->
         <div class="flex items-center space-x-4">
           <a href="#" class="text-gray-600 hover:text-blue-700">
             <i class="fas fa-search"></i>
@@ -76,130 +91,142 @@
     </div>
   </nav>
 
-  <!-- Content Placeholder -->
-  <header class="mt-24 w-full relative">
+  <!-- Header Section -->
+  <header class="mt-24 w-full relative" id="header">
     <img
       src="header.jpg"
       alt="Student Life Banner"
-      class="w-full object-cover"
+      class="w-full h-48 md:h-64 lg:h-96 object-cover"
     />
-    <div class="bg-blue-400 text-white font-bold py-4 mx-4 md:mx-8  w-full m-2 mt-0" id="header">
-      <h1 class="text-2xl px-3">STDUENT LIFE</h1>
+    <div class="bg-blue-400 text-white font-bold py-4 px-4 md:px-8" id="header-text">
+      <h1 class="text-xl md:text-2xl">STUDENT LIFE</h1>
     </div>
-    <div class=" flex items-center space-x-4  bg-blue-400 w-full h-12 text-white font-bold" id="header">
-      <ul class="hidden md:flex space-x-6 font-medium px-16 text-xl">
-        <li><a href="#" class="">About</a></li>
-        <li><a href="#" class="">Admissions</a></li>
-        <li><a href="#" class="">Academics</a></li>
-      </div>
+    <div class="bg-blue-400 w-full h-12 text-white font-bold overflow-x-auto" id="header-text">
+      <ul class="flex space-x-6 px-4 md:px-16 h-full items-center text-sm md:text-xl whitespace-nowrap">
+        <li><a href="#" class="hover:text-gray-200">About</a></li>
+        <li><a href="#" class="hover:text-gray-200">Admissions</a></li>
+        <li><a href="#" class="hover:text-gray-200">Academics</a></li>
+      </ul>
+    </div>
   </header>
- <!-- text section -->
-  <div class="bg-white p-10">
-    <h1 class="text-3xl font-bold text-blue-800 text-center pb-2" id="text">ADA Student Life: Journey of Growth and Discovery</h1>
-    <p class=" text-black flex-wrap text-xl">Student life at ADA University is a unique experience that sets it apart from other universities in Azerbaijan. From the moment students step onto campus, they are immersed in an environment that combines academic rigor with opportunities for personal and professional growth.
-      At ADA, the focus extends beyond traditional education. The university embraces international standards, offering a modern, interactive learning environment where collaboration, critical thinking, and real-world problem-solving are at the core. Unlike many other institutions in Azerbaijan, English is the primary language of instruction, preparing students for global opportunities and fostering an inclusive, multicultural atmosphere.</p>
-  </div>
-  <!-- You tube link add -->
-   
-    <div class="flex justify-between items-center p-4" id="youtube">
-      <div class="w-1/2 pr-4">
-        <p class="text-3xl text-white pb-2">Melting Pot of Cultues,<br> Meeting Point of Talents</p>
-        <p class="text-xl text-white">Explore more about ADA University and its vibrant student life through our YouTube channel. Watch videos that showcase our campus, events, and student experiences.</p>
-      </div>
-      <div class="w-1/2 pl-4">
-        <iframe width="606" height="300" src="https://www.youtube.com/embed/4MT6VwMcOwI" title="Commencement 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-   </div>
-   <div>
 
-   </div>
-   <!-- Footer -->
-   <footer class="w-full bg-slate-900  mt-8" id="footer">
-    <!-- Border line above footer -->
-    <div class="w-full border-t border-slate-400"></div>
-    
-    <!-- Footer content container -->
-    <div class="max-w-7xl mx-auto px-4 py-12 md:py-16">
-        <!-- Footer grid layout -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Company Info Section -->
-            <div class="space-y-4">
-                <img class="w-36 h-auto" src="ada logo.svg" alt="Company Logo">
-                <div class="space-y-2">
-                    <p class="text-2xl text-slate-200 font-semibold">Developer Shivam</p>
-                    <p class="text-slate-200 hover:text-slate-400 transition-colors">
-                        <a href="mailto:lk842569@gmail.com">lk842569@gmail.com</a>
-                    </p>
-                    <!-- Social Media Icons -->
-                    <div class="flex space-x-4 pt-2">
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                            <i class="fab fa-facebook text-xl"></i>
-                        </a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-  
-            
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">About us</h3>
-                    <div class="w-16 h-1 bg-yellow-400 rounded-full"></div>
-                </div>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">ADA University</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Camous</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Admissions</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Student Life</a></li>
-                </ul>
-            </div>
-  
-          
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Quick Links</h3>
-                    <div class="w-16 h-1 bg-yellow-400 rounded-full"></div>
-                </div>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Wasshigton cebtre of Add</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Giving to ADA</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Important Skills</a></li>
-                </ul>
-            </div>
-  
-            <!-- USP Access Section -->
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Contact Us</h3>
-                    <div class="w-16 h-1 bg-yellow-400 rounded-full"></div>
-                </div>
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">shivam@gamil.com</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">7781804958</a></li>
-                    <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Almadhey agha ass </a></li>
-                </ul>
-            </div>
+  <!-- Text Section -->
+  <div class="bg-white p-4 md:p-10" >
+    <h1 class="text-2xl md:text-3xl font-bold text-blue-800 text-center pb-2" id="text">ADA Student Life: Journey of Growth and Discovery</h1>
+    <p class="text-black text-lg md:text-xl max-w-4xl mx-auto">
+      Student life at ADA University is a unique experience that sets it apart from other universities in Azerbaijan. From the moment students step onto campus, they are immersed in an environment that combines academic rigor with opportunities for personal and professional growth.
+      At ADA, the focus extends beyond traditional education. The university embraces international standards, offering a modern, interactive learning environment where collaboration, critical thinking, and real-world problem-solving are at the core. Unlike many other institutions in Azerbaijan, English is the primary language of instruction, preparing students for global opportunities and fostering an inclusive, multicultural atmosphere.
+    </p>
+  </div>
+
+  <!-- YouTube Section -->
+  <div class="bg-blue-900 p-4 md:p-8" id="youtube">
+    <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto gap-8">
+      <div class="w-full md:w-1/2">
+        <h2 class="text-2xl md:text-3xl text-white pb-4">Melting Pot of Cultures,<br> Meeting Point of Talents</h2>
+        <p class="text-lg md:text-xl text-white">Explore more about ADA University and its vibrant student life through our YouTube channel. Watch videos that showcase our campus, events, and student experiences.</p>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="aspect-w-16 aspect-h-9">
+          <iframe class="w-full h-[300px]" src="https://www.youtube.com/embed/4MT6VwMcOwI" title="Commencement 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-  
-        <!-- Copyright Section -->
-        <div class="mt-12 pt-8 border-t border-slate-800 text-center">
-            <p class="text-slate-200">&copy;  2025 Developer Lakshman jha. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 mt-8" id="footer">
+    <div class="border-t border-slate-400"></div>
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div class="space-y-4">
+          <img class="w-28 md:w-36" src="ada logo.svg" alt="Company Logo">
+          <div class="space-y-2">
+            <p class="text-xl md:text-2xl text-slate-200 font-semibold">Developer Shivam</p>
+            <p class="text-slate-200 hover:text-slate-400 transition-colors">
+              <a href="mailto:lk842569@gmail.com">lk842569@gmail.com</a>
+            </p>
+            <div class="flex space-x-4 pt-2">
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i class="fab fa-facebook text-xl"></i>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i class="fab fa-linkedin text-xl"></i>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <!-- About Us -->
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2">About us</h3>
+            <div class="w-16 h-1 bg-yellow-400 rounded-full"></div>
+          </div>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">ADA University</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Campus</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Admissions</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Student Life</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Quick Links</h3>
+            <div class="w-16 h-1 bg-yellow-400 rounded-full"></div>
+          </div>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Washington Center of ADA</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Giving to ADA</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Important Skills</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Contact Us</h3>
+            <div class="w-16 h-1 bg-yellow-400 rounded-full"></div>
+          </div>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">shivam@gmail.com</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">7781804958</a></li>
+            <li><a href="#" class="text-slate-300 hover:text-white transition-colors">Almadhey agha ass</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-12 pt-8 border-t border-slate-800 text-center">
+        <p class="text-slate-200">&copy; 2025 Developer Lakshman jha. All rights reserved.</p>
+      </div>
     </div>
   </footer>
+
   <script>
-    // Mobile Menu Toggle Script
+    // Mobile Menu Toggle Logic
     const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
     menuToggle.addEventListener('click', () => {
-      alert('Add JavaScript logic to toggle the mobile menu visibility here!');
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      document.body.style.overflow = 'auto';
     });
   </script>
-
 </body>
 </html>
 
