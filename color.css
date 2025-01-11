@@ -20,3 +20,17 @@
 #header-text{
   background-color: #2F607D;
 }
+#get{
+  color: white;
+  background:linear-gradient( #336178, #559ec9); ;
+}
+#button{
+  background-color: #0c5c85;
+
+}
+#button:hover{
+  background-color: rgb(191, 11, 11);
+}
+#course{
+  background-color: #F3F4F6;
+}
